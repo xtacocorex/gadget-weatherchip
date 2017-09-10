@@ -1,0 +1,16 @@
+spec: "0.0"
+name: gadget-weatherchip
+uuid: d4c240cd-d776-4728-a31c-4fb14fdd3f4c
+type: docker
+onboot:
+services:
+- name: wxchip
+  uuid: 391d619a-1b4d-4bdc-9ce3-edef9db6f2f4
+  image: ""
+  directory: "./"
+  net: "host"
+  readonly: false
+  command: []
+  binds: ['/tmp:/tmp','/sys:/sys','/lib/modules:/lib/modules']
+  capabilities: ['SYS_RAWIO','SYS_MODULE','MKNOD']
+  devices: ["/dev/i2c-0", "/dev/i2c-1", "/dev/i2c-2"]
